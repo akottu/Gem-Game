@@ -1,0 +1,69 @@
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+button {
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    border-width: 1px;
+    color: black;
+    border-color: white;
+    font-size: 98px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    margin: 3px;
+}
+
+#goal-div {
+    font-size: 64px;
+    width: 50%;
+    float: left;
+}
+
+#current-score-div {
+    font-size: 64px;
+    width: 50%;
+    float: left;
+}
+
+#buttons-div {
+    width: 100%;
+    text-align: center;
+}
+
+/* #red-button, #orange-button, #yellow-button {
+    color: black;
+    border-color: black;
+}
+
+#green-button, #blue-button, #purple-button {
+    color: white;
+    border-color: white;
+} */
+
+#red-button {
+    background-color: red;
+}
+
+#orange-button {
+    background-color: orange;
+}
+
+#yellow-button {
+    background-color: yellow;
+}
+
+#green-button {
+    background-color: green;
+}
+
+#blue-button {
+    background-color: blue;
+}
+
+#purple-button {
+    background-color: purple;
+}
