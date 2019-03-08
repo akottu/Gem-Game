@@ -12,9 +12,9 @@ var purpleButtonValue = 0;
 var wins = 0;
 var losses = 0;
 
-$("#red-button").text("<p>redButtonValue<p>");
-
-start();
+window.onload = function() {
+    start();
+}
 
 function initializeButtonValues() {
 
@@ -32,11 +32,19 @@ function initializeButtonValues() {
     $("#blue-button").text(blueButtonValue.toString());
     $("#purple-button").text(purpleButtonValue.toString());
 
+    $("#red-button").attr("value", redButtonValue);
+    $("#orange-button").attr("value", orangeButtonValue);
+    $("#yellow-button").attr("value", yellowButtonValue);
+    $("#green-button").attr("value", greenButtonValue);
+    $("#blue-button").attr("value", blueButtonValue);
+    $("#purple-button").attr("value", purpleButtonValue);
+
+
 }
 
-$("button").click(function() {
-    currentScore += this;
-    $(this).text(currentScore);
+$("#red-button").click(function() {
+    currentScore = currentScore + parseInt($("#red-button").attr("value"));
+    $("#current-score-display").text(currentScore.toString());
 
     if(currentScore === numberToGuess) {
         win();
@@ -45,6 +53,20 @@ $("button").click(function() {
         lose();
     }
 })
+
+$("button").click(function() {
+    currentScore += parseInt($(this).attr("value"));
+    $("#current-score-display").text(currentScore);
+
+    if(currentScore === numberToGuess) {
+        win();
+    }
+    else if(currentScore > numberToGuess) {
+        lose();
+    }
+})
+
+
 
 
 function start() {
