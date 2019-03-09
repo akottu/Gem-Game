@@ -43,6 +43,7 @@ function initializeButtonValues() {
 }
 
 $("#red-button").click(function() {
+    console.log("reached");
     currentScore = currentScore + parseInt($("#red-button").attr("value"));
     $("#current-score-display").text(currentScore.toString());
 
@@ -52,7 +53,7 @@ $("#red-button").click(function() {
     else if(currentScore > numberToGuess) {
         lose();
     }
-})
+});
 
 $("button").click(function() {
     currentScore += parseInt($(this).attr("value"));
@@ -64,7 +65,7 @@ $("button").click(function() {
     else if(currentScore > numberToGuess) {
         lose();
     }
-})
+});
 
 
 
