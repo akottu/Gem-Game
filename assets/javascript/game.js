@@ -13,8 +13,30 @@ var wins = 0;
 var losses = 0;
 
 window.onload = function() {
+
     start();
+
+    document.getElementById("red-button").onclick = function() {redButtonClicked()};
+    document.getElementById("orange-button").onclick = function() {orangeButtonClicked()};
+    document.getElementById("yellow-button").onclick = function() {yellowButtonClicked()};
+    document.getElementById("green-button").onclick = function() {greenButtonClicked()};
+    document.getElementById("blue-button").onclick = function() {blueButtonClicked()};
+    document.getElementById("purple-button").onclick = function() {purpleButtonClicked()};
+   
 }
+
+// $("#red-button").click(function() {
+//     console.log("reached");
+//     currentScore = currentScore + parseInt($("#red-button").attr("value"));
+//     $("#current-score-display").text(currentScore.toString());
+
+//     if(currentScore === numberToGuess) {
+//         win();
+//     }
+//     else if(currentScore > numberToGuess) {
+//         lose();
+//     }
+// });
 
 function initializeButtonValues() {
 
@@ -42,30 +64,97 @@ function initializeButtonValues() {
 
 }
 
-$("#red-button").click(function() {
-    console.log("reached");
-    currentScore = currentScore + parseInt($("#red-button").attr("value"));
-    $("#current-score-display").text(currentScore.toString());
 
-    if(currentScore === numberToGuess) {
-        win();
-    }
-    else if(currentScore > numberToGuess) {
-        lose();
-    }
-});
 
-$("button").click(function() {
-    currentScore += parseInt($(this).attr("value"));
+function redButtonClicked() {
+
+    currentScore+= +document.getElementById("red-button").value;
     $("#current-score-display").text(currentScore);
 
     if(currentScore === numberToGuess) {
-        win();
-    }
-    else if(currentScore > numberToGuess) {
-        lose();
-    }
-});
+            win();
+        }
+        else if(currentScore > numberToGuess) {
+            lose();
+        }  
+}
+
+function orangeButtonClicked() {
+
+    currentScore+= +document.getElementById("orange-button").value;
+    $("#current-score-display").text(currentScore);
+
+    if(currentScore === numberToGuess) {
+            win();
+        }
+        else if(currentScore > numberToGuess) {
+            lose();
+        }  
+}
+
+function yellowButtonClicked() {
+
+    currentScore+= +document.getElementById("yellow-button").value;
+    $("#current-score-display").text(currentScore);
+
+    if(currentScore === numberToGuess) {
+            win();
+        }
+        else if(currentScore > numberToGuess) {
+            lose();
+        }  
+}
+
+function greenButtonClicked() {
+
+    currentScore+= +document.getElementById("green-button").value;
+    $("#current-score-display").text(currentScore);
+
+    if(currentScore === numberToGuess) {
+            win();
+        }
+        else if(currentScore > numberToGuess) {
+            lose();
+        }  
+}
+
+function blueButtonClicked() {
+
+    currentScore+= +document.getElementById("blue-button").value;
+    $("#current-score-display").text(currentScore);
+
+    if(currentScore === numberToGuess) {
+            win();
+        }
+        else if(currentScore > numberToGuess) {
+            lose();
+        }  
+}
+
+function purpleButtonClicked() {
+
+    currentScore+= +document.getElementById("purple-button").value;
+    $("#current-score-display").text(currentScore);
+
+    if(currentScore === numberToGuess) {
+            win();
+        }
+        else if(currentScore > numberToGuess) {
+            lose();
+        }  
+}
+
+// $("button").click(function() {
+//     currentScore += parseInt($(this).attr("value"));
+//     $("#current-score-display").text(currentScore);
+
+//     if(currentScore === numberToGuess) {
+//         win();
+//     }
+//     else if(currentScore > numberToGuess) {
+//         lose();
+//     }
+// });
 
 
 
@@ -88,6 +177,6 @@ function win() {
 function lose() {
     alert("You lose!");
     losses++;
-    $("#losses-display").text(wins);
+    $("#losses-display").text(losses);
     start();
 }
